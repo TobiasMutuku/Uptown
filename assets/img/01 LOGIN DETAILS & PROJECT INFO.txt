@@ -1,0 +1,14 @@
+**Database Name: ecommerceweb**
+
+**Developed by Tobias Mutuku**
+
+**Recommended PHP Version 5.6, 7.4**
+
+
+
+**Customer Verification should be done by accessing the database and changing its active status**
+
+**Admin Login Details**
+
+Email   : mutukutobias98@gmail.com
+Password: Tobias@2018*
