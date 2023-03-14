@@ -43,14 +43,6 @@ if(isset($_POST['form1'])) {
         		$payment_details = '
 Transaction Id: '.$row['txnid'].'<br>
         		';
-        	elseif($row['payment_method'] == 'Stripe'):
-				$payment_details = '
-Transaction Id: '.$row['txnid'].'<br>
-Card number: '.$row['card_number'].'<br>
-Card CVV: '.$row['card_cvv'].'<br>
-Card Month: '.$row['card_month'].'<br>
-Card Year: '.$row['card_year'].'<br>
-        		';
         	elseif($row['payment_method'] == 'Bank Deposit'):
 				$payment_details = '
 Transaction Details: <br>'.$row['bank_transaction_info'];
@@ -227,15 +219,6 @@ if($success_message != '') {
                         		<b>Payment Id:</b> <?php echo $row['payment_id']; ?><br>
                         		<b>Date:</b> <?php echo $row['payment_date']; ?><br>
                         		<b>Transaction Id:</b> <?php echo $row['txnid']; ?><br>
-                        	<?php elseif($row['payment_method'] == 'Stripe'): ?>
-                        		<b>Payment Method:</b> <?php echo '<span style="color:red;"><b>'.$row['payment_method'].'</b></span>'; ?><br>
-                        		<b>Payment Id:</b> <?php echo $row['payment_id']; ?><br>
-								<b>Date:</b> <?php echo $row['payment_date']; ?><br>
-                        		<b>Transaction Id:</b> <?php echo $row['txnid']; ?><br>
-                        		<b>Card Number:</b> <?php echo $row['card_number']; ?><br>
-                        		<b>Card CVV:</b> <?php echo $row['card_cvv']; ?><br>
-                        		<b>Expire Month:</b> <?php echo $row['card_month']; ?><br>
-                        		<b>Expire Year:</b> <?php echo $row['card_year']; ?><br>
                         	<?php elseif($row['payment_method'] == 'Bank Deposit'): ?>
                         		<b>Payment Method:</b> <?php echo '<span style="color:red;"><b>'.$row['payment_method'].'</b></span>'; ?><br>
                         		<b>Payment Id:</b> <?php echo $row['payment_id']; ?><br>

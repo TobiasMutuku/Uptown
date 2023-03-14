@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 10, 2023 at 01:36 PM
+-- Generation Time: Mar 14, 2023 at 09:01 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -371,10 +371,10 @@ INSERT INTO `tbl_language` (`lang_id`, `lang_name`, `lang_value`) VALUES
 (103, 'Company Name', 'Company Name'),
 (104, 'Phone Number', 'Phone Number'),
 (105, 'Address', 'Address'),
-(106, 'Country', 'Country'),
+(106, 'County', 'County'),
 (107, 'City', 'City'),
-(108, 'State', 'State'),
-(109, 'Zip Code', 'Zip Code'),
+(108, 'Street', 'Street'),
+(109, 'Postal Code', 'Postal Code'),
 (110, 'About Us', 'About Us'),
 (111, 'Featured Posts', 'Featured Posts'),
 (112, 'Popular Posts', 'Popular Posts'),
@@ -393,8 +393,8 @@ INSERT INTO `tbl_language` (`lang_id`, `lang_name`, `lang_value`) VALUES
 (125, 'Address can not be empty.', 'Address can not be empty.'),
 (126, 'You must have to select a country.', 'You must have to select a country.'),
 (127, 'City can not be empty.', 'City can not be empty.'),
-(128, 'State can not be empty.', 'State can not be empty.'),
-(129, 'Zip Code can not be empty.', 'Zip Code can not be empty.'),
+(128, 'Street can not be empty.', 'Street can not be empty.'),
+(129, 'Postal Code can not be empty.', 'Postal Code can not be empty.'),
 (130, 'Profile Information is updated successfully.', 'Profile Information is updated successfully.'),
 (131, 'Email Address can not be empty', 'Email Address can not be empty'),
 (132, 'Email and/or Password can not be empty.', 'Email and/or Password can not be empty.'),
@@ -478,13 +478,6 @@ CREATE TABLE `tbl_order` (
   `payment_id` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `tbl_order`
---
-
-INSERT INTO `tbl_order` (`id`, `product_id`, `product_name`, `size`, `color`, `quantity`, `unit_price`, `payment_id`) VALUES
-(6, 95, 'Pishori Rice', '', 'Black', '1', '279', '1678447534');
-
 -- --------------------------------------------------------
 
 --
@@ -557,13 +550,6 @@ CREATE TABLE `tbl_payment` (
   `shipping_status` varchar(20) NOT NULL,
   `payment_id` varchar(255) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `tbl_payment`
---
-
-INSERT INTO `tbl_payment` (`id`, `customer_id`, `customer_name`, `customer_email`, `payment_date`, `txnid`, `paid_amount`, `card_number`, `card_cvv`, `card_month`, `card_year`, `bank_transaction_info`, `payment_method`, `payment_status`, `shipping_status`, `payment_id`) VALUES
-(56, 13, 'Innocent Nyalala', 'inyalala@kabarak.ac.ke', '2023-03-10 03:25:34', '', 379, '', '', '', '', '', 'PayPal', 'Pending', 'Pending', '1678447534');
 
 -- --------------------------------------------------------
 
@@ -658,8 +644,8 @@ INSERT INTO `tbl_product` (`p_id`, `p_name`, `p_old_price`, `p_current_price`, `
 (83, 'product name', '26', '19', 77, 'product-featured-83.jpg', 'All Our products are fresh from the farm', 'A brief description of what the product is', 'Short description of the facial look of the product', '<p>This is a sample text for conditions.</p>', 'We offer a return policy for defective goods which can be seen in our return policy page', 3, 0, 1, 21),
 (84, 'Spinach', '51', '39', 26, 'product-featured-84.jpg', 'All Our products are fresh from the farm', 'A brief description of what the product is', 'Short description of the facial look of the product', '<p><span style=\"color: rgb(51, 51, 51); font-size: 14px;\">This is a sample text for conditions.</span><br></p>', 'We offer a return policy for defective goods which can be seen in our return policy page', 13, 1, 1, 32),
 (85, 'product name', '110', '91', 32, 'product-featured-85.jpg', 'All Our products are fresh from the farm', 'A brief description of what the product is', 'Short description of the facial look of the product', '<p><span style=\"color: rgb(51, 51, 51); font-size: 14px;\">This is a sample text for conditions.</span><br></p>', 'We offer a return policy for defective goods which can be seen in our return policy page', 5, 0, 1, 25),
-(86, 'Fresh Ripe Banana', '199', '179', 32, 'product-featured-86.jpg', 'All Our products are fresh from the farm', 'A brief description of what the product is', 'Short description of the facial look of the product', '<p><span style=\"color: rgb(51, 51, 51); font-size: 14px;\">This is a sample text for conditions.</span><br></p>', 'We offer a return policy for defective goods which can be seen in our return policy page', 9, 1, 1, 3),
-(87, 'name', '59', '37', 68, 'product-featured-87.jpg', 'All Our products are fresh from the farm', 'A brief description of what the product is', 'Short description of the facial look of the product', '<p><span style=\"color: rgb(51, 51, 51); font-size: 14px;\">This is a sample text for conditions.</span><br></p>', 'We offer a return policy for defective goods which can be seen in our return policy page', 2, 0, 1, 26),
+(86, 'Fresh Ripe Banana', '199', '179', 32, 'product-featured-86.jpg', 'All Our products are fresh from the farm', 'A brief description of what the product is', 'Short description of the facial look of the product', '<p><span style=\"color: rgb(51, 51, 51); font-size: 14px;\">This is a sample text for conditions.</span><br></p>', 'We offer a return policy for defective goods which can be seen in our return policy page', 15, 1, 1, 3),
+(87, 'Beans', '59', '37', 68, 'product-featured-87.jpg', 'All Our products are fresh from the farm', 'A brief description of what the product is', 'Short description of the facial look of the product', '<p><span style=\"color: rgb(51, 51, 51); font-size: 14px;\">This is a sample text for conditions.</span><br></p>', 'We offer a return policy for defective goods which can be seen in our return policy page', 2, 0, 1, 27),
 (88, 'name', '108', '83', 59, 'product-featured-88.jpg', 'All Our products are fresh from the farm', 'A brief description of what the product is', 'Short description of the facial look of the product', '<p><span style=\"color: rgb(51, 51, 51); font-size: 14px;\">This is a sample text for conditions.</span><br></p>', 'We offer a return policy for defective goods which can be seen in our return policy page', 4, 0, 1, 21),
 (89, 'name', '58', '37', 110, 'product-featured-89.jpg', 'All Our products are fresh from the farm', 'A brief description of what the product is', 'Short description of the facial look of the product', '<p><span style=\"color: rgb(51, 51, 51); font-size: 14px;\">This is a sample text for conditions.</span><br></p>', 'We offer a return policy for defective goods which can be seen in our return policy page', 1, 0, 1, 18),
 (90, ' product name', '43', '32', 64, 'product-featured-90.jpg', 'All Our products are fresh from the farm', 'A brief description of what the product is', 'Short description of the facial look of the product', '<p><span style=\"color: rgb(51, 51, 51); font-size: 14px;\">This is a sample text for conditions.</span><br></p>', 'We offer a return policy for defective goods which can be seen in our return policy page', 4, 0, 1, 14),
@@ -667,13 +653,13 @@ INSERT INTO `tbl_product` (`p_id`, `p_name`, `p_old_price`, `p_current_price`, `
 (92, 'Tomatoes', '110', '91', 29, 'product-featured-92.jpg', 'All Our products are fresh from the farm', 'A brief description of what the product is', 'Short description of the facial look of the product', '<p><span style=\"color: rgb(51, 51, 51); font-size: 14px;\">This is a sample text for conditions.</span><br></p>', 'We offer a return policy for defective goods which can be seen in our return policy page', 13, 0, 1, 60),
 (93, 'short description', '32', '25', 165, 'product-featured-93.jpg', 'All Our products are fresh from the farm', 'A brief description of what the product is', 'Short description of the facial look of the product', '<p><span style=\"color: rgb(51, 51, 51); font-size: 14px;\">This is a sample text for conditions.</span><br></p>', 'We offer a return policy for defective goods which can be seen in our return policy page', 1, 0, 1, 42),
 (94, 'Maize', '160', '149', 46, 'product-featured-94.jpg', 'All Our products are fresh from the farm', 'A brief description of what the product is', 'Short description of the facial look of the product', '<p><span style=\"color: rgb(51, 51, 51); font-size: 14px;\">This is a sample text for conditions.</span><br></p>', 'We offer a return policy for defective goods which can be seen in our return policy page', 6, 0, 1, 71),
-(95, 'Pishori Rice', '329', '279', 52, 'product-featured-95.jpg', 'All Our products are fresh from the farm', 'A brief description of what the product is', 'Short description of the facial look of the product', '<p><span style=\"color: rgb(51, 51, 51); font-size: 14px;\">This is a sample text for conditions.</span><br></p>', 'We offer a return policy for defective goods which can be seen in our return policy page', 15, 1, 1, 62),
+(95, 'Pishori Rice', '329', '279', 53, 'product-featured-95.jpg', 'All Our products are fresh from the farm', 'A brief description of what the product is', 'Short description of the facial look of the product', '<p><span style=\"color: rgb(51, 51, 51); font-size: 14px;\">This is a sample text for conditions.</span><br></p>', 'We offer a return policy for defective goods which can be seen in our return policy page', 15, 1, 1, 63),
 (96, 'Avocado', '29', '23', 102, 'product-featured-96.jpg', 'All Our products are fresh from the farm', 'A brief description of what the product is', 'Short description of the facial look of the product', '<p><span style=\"color: rgb(51, 51, 51); font-size: 14px;\">This is a sample text for conditions.</span><br></p>', 'We offer a return policy for defective goods which can be seen in our return policy page', 12, 1, 1, 20),
 (97, 'Potatoes', '87', '67', 53, 'product-featured-97.jpg', 'All Our products are fresh from the farm', 'A brief description of what the product is', 'Short description of the facial look of the product', '<p><span style=\"color: rgb(51, 51, 51); font-size: 14px;\">This is a sample text for conditions.</span><br></p>', 'We offer a return policy for defective goods which can be seen in our return policy page', 13, 1, 1, 32),
 (98, 'Kunde', '52', '43', 41, 'product-featured-98.jpg', 'All Our products are fresh from the farm', 'A brief description of what the product is', 'Short description of the facial look of the product', '<p><span style=\"color: rgb(51, 51, 51); font-size: 14px;\">This is a sample text for conditions.</span><br></p>', 'We offer a return policy for defective goods which can be seen in our return policy page', 2, 1, 1, 15),
-(99, 'Wheat', '512', '495', 46, 'product-featured-99.jpg', 'All Our products are fresh from the farm', 'A brief description of what the product is', 'Short description of the facial look of the product', '<p><span style=\"color: rgb(51, 51, 51); font-size: 14px;\">This is a sample text for conditions.</span><br></p>', 'We offer a return policy for defective goods which can be seen in our return policy page', 0, 1, 1, 61),
+(99, 'Wheat', '512', '495', 46, 'product-featured-99.jpg', 'All Our products are fresh from the farm', 'A brief description of what the product is', 'Short description of the facial look of the product', '<p><span style=\"color: rgb(51, 51, 51); font-size: 14px;\">This is a sample text for conditions.</span><br></p>', 'We offer a return policy for defective goods which can be seen in our return policy page', 0, 1, 1, 62),
 (100, 'Strawberries', '105', '95', 78, 'product-featured-100.jpg', 'All Our products are fresh from the farm', 'A brief description of what the product is', 'Short description of the facial look of the product', '<p><span style=\"color: rgb(51, 51, 51); font-size: 14px;\">This is a sample text for conditions.</span><br></p>', 'We offer a return policy for defective goods which can be seen in our return policy page', 3, 0, 1, 18),
-(101, 'Eggs', '79', '70', 290, 'product-featured-101.jpg', 'All Our products are fresh from the farm', 'A brief description of what the product is', 'Short description of the facial look of the product', '<p><span style=\"color: rgb(51, 51, 51); font-size: 14px;\">This is a sample text for conditions.</span><br></p>', 'We offer a return policy for defective goods which can be seen in our return policy page', 4, 1, 1, 73),
+(101, 'Eggs', '79', '70', 290, 'product-featured-101.jpg', 'All Our products are fresh from the farm', 'A brief description of what the product is', 'Short description of the facial look of the product', '<p><span style=\"color: rgb(51, 51, 51); font-size: 14px;\">This is a sample text for conditions.</span><br></p>', 'We offer a return policy for defective goods which can be seen in our return policy page', 4, 1, 1, 85),
 (102, 'Red, Yellow, Green Pepper', '190', '169', 112, 'product-featured-102.jpg', 'All Our products are fresh from the farm', 'A brief description of what the product is', 'Short description of the facial look of the product', '<p><span style=\"color: rgb(51, 51, 51); font-size: 14px;\">This is a sample text for conditions.</span><br></p>', 'We offer a return policy for defective goods which can be seen in our return policy page', 11, 1, 1, 32);
 
 -- --------------------------------------------------------
@@ -737,9 +723,6 @@ INSERT INTO `tbl_product_color` (`id`, `color_id`, `p_id`) VALUES
 (173, 2, 82),
 (174, 4, 82),
 (195, 2, 84),
-(201, 2, 86),
-(202, 6, 86),
-(203, 17, 86),
 (222, 16, 93),
 (223, 21, 85),
 (224, 22, 85),
@@ -766,19 +749,15 @@ INSERT INTO `tbl_product_color` (`id`, `color_id`, `p_id`) VALUES
 (246, 25, 90),
 (247, 27, 90),
 (248, 28, 90),
-(251, 2, 95),
-(252, 6, 95),
 (253, 5, 96),
 (254, 24, 96),
 (256, 2, 94),
-(257, 3, 87),
-(258, 17, 87),
 (261, 25, 97),
 (262, 5, 98),
-(263, 6, 99),
 (264, 14, 100),
-(266, 6, 101),
-(267, 2, 102);
+(267, 2, 102),
+(268, 4, 86),
+(269, 5, 86);
 
 -- --------------------------------------------------------
 
@@ -944,7 +923,6 @@ INSERT INTO `tbl_product_size` (`id`, `size_id`, `p_id`) VALUES
 (280, 4, 84),
 (281, 5, 84),
 (282, 6, 84),
-(305, 26, 86),
 (339, 27, 93),
 (340, 15, 85),
 (341, 16, 85),
@@ -984,24 +962,12 @@ INSERT INTO `tbl_product_size` (`id`, `size_id`, `p_id`) VALUES
 (376, 2, 90),
 (377, 3, 90),
 (378, 4, 90),
-(380, 27, 95),
 (381, 3, 96),
 (382, 4, 96),
 (383, 5, 96),
 (384, 6, 96),
 (385, 7, 96),
 (398, 33, 94),
-(399, 29, 87),
-(400, 30, 87),
-(401, 31, 87),
-(402, 32, 87),
-(403, 33, 87),
-(404, 34, 87),
-(405, 35, 87),
-(406, 36, 87),
-(407, 37, 87),
-(408, 38, 87),
-(409, 39, 87),
 (418, 8, 97),
 (419, 9, 97),
 (420, 10, 97),
@@ -1018,19 +984,20 @@ INSERT INTO `tbl_product_size` (`id`, `size_id`, `p_id`) VALUES
 (431, 5, 98),
 (432, 6, 98),
 (433, 7, 98),
-(434, 40, 99),
-(435, 41, 99),
 (436, 3, 100),
 (437, 4, 100),
 (438, 5, 100),
 (439, 6, 100),
-(441, 27, 101),
 (442, 42, 102),
 (443, 43, 102),
 (444, 44, 102),
 (445, 45, 102),
 (446, 46, 102),
-(447, 47, 102);
+(447, 47, 102),
+(448, 5, 101),
+(449, 4, 95),
+(450, 4, 87),
+(451, 6, 86);
 
 -- --------------------------------------------------------
 
@@ -1214,12 +1181,12 @@ CREATE TABLE `tbl_size` (
 --
 
 INSERT INTO `tbl_size` (`size_id`, `size_name`) VALUES
-(1, 'small bag'),
-(2, 'Big bag'),
-(3, 'Medium bag'),
-(4, 'Large bag'),
-(5, '1 tray'),
-(6, '1 crate'),
+(1, '5kg bag'),
+(2, '25kg bag'),
+(3, '50kg bag'),
+(4, '90kg bag'),
+(5, 'tray'),
+(6, 'crate'),
 (7, '1 box'),
 (8, '1 pack'),
 (9, '2 packs'),
@@ -1230,17 +1197,7 @@ INSERT INTO `tbl_size` (`size_id`, `size_name`) VALUES
 (14, '7 packs'),
 (15, '8 packs'),
 (16, '9 packs'),
-(17, '10 packs'),
-(18, '11 packs'),
-(19, '12 packs'),
-(20, '13 packs'),
-(21, '14 packs'),
-(22, '15 packs'),
-(23, '16 packs'),
-(24, '17 packs'),
-(25, '18 packs'),
-(26, ''),
-(27, '');
+(17, '10 packs');
 
 -- --------------------------------------------------------
 
@@ -1285,14 +1242,12 @@ CREATE TABLE `tbl_social` (
 --
 
 INSERT INTO `tbl_social` (`social_id`, `social_name`, `social_url`, `social_icon`) VALUES
-(1, 'Facebook', 'https://www.facebook.com/#', 'fa fa-facebook'),
-(2, 'Twitter', 'https://www.twitter.com/#', 'fa fa-twitter'),
-(3, 'LinkedIn', '', 'fa fa-linkedin'),
-(5, 'Pinterest', '', 'fa fa-pinterest'),
-(6, 'YouTube', 'https://www.youtube.com/#', 'fa fa-youtube'),
-(7, 'Instagram', 'https://www.instagram.com/#', 'fa fa-instagram'),
-(11, 'Snapchat', '', 'fa fa-snapchat'),
-(12, 'WhatsApp', 'https://www.whatsapp.com/#', 'fa fa-whatsapp');
+(1, 'Facebook', 'https://www.facebook.com/profile.php?id=100009980612311', 'fa fa-facebook'),
+(2, 'Twitter', 'https://twitter.com/sculptingmen', 'fa fa-twitter'),
+(3, 'LinkedIn', 'https://www.linkedin.com/in/tobias-mutuku-0675881a8/', 'fa fa-linkedin'),
+(6, 'YouTube', 'https://www.youtube.com/channel/UCJ6Ag0yKErZl8ZLR2qj1x6Q', 'fa fa-youtube'),
+(7, 'Instagram', 'https://www.instagram.com/tobias_mutuku/', 'fa fa-instagram'),
+(12, 'WhatsApp', 'https://wa.me/c/254741877729', 'fa fa-whatsapp');
 
 -- --------------------------------------------------------
 
@@ -1314,12 +1269,12 @@ CREATE TABLE `tbl_subscriber` (
 --
 
 INSERT INTO `tbl_subscriber` (`subs_id`, `subs_email`, `subs_date`, `subs_date_time`, `subs_hash`, `subs_active`) VALUES
-(1, 'ruth@mail.com', '2022-03-20', '2022-03-20 10:25:18', 'f4eabc1afed38a08da8d1c6e5fb42187', 1),
-(2, 'kimberly@mail.com', '2022-03-20', '2022-03-20 10:26:07', '61f3af9cac686555a4bff9e565f88c47', 1),
-(3, 'gregobn@mail.com', '2022-03-20', '2022-03-20 10:27:21', '72d6fc3a9e9ed33dfc30b10f4de82f34', 1),
-(4, 'morgan.sarahh5@mail.com', '2022-03-20', '2022-03-20 10:27:48', 'bcdeda095a6c882803fc3aaf4a17f08e', 1),
-(5, 'greenwd1154@mail.com', '2022-03-20', '2022-03-20 10:28:09', '279ecfe9debbb091c664641f534857ee', 1),
-(6, 'awsm785@mail.com', '2022-03-20', '2022-03-20 10:28:21', '94096ae01fc65e71c50c7843d096e041', 1);
+(1, 'ruthwambui@gmail.com', '2023-03-20', '2023-03-20 10:25:18', 'f4eabc1afed38a08da8d1c6e5fb42187', 1),
+(2, 'kimberlymwai@gmail.com', '2023-03-20', '2023-03-20 10:26:07', '61f3af9cac686555a4bff9e565f88c47', 1),
+(3, 'gregorymutua@gmail.com', '2023-03-20', '2023-03-20 10:27:21', '72d6fc3a9e9ed33dfc30b10f4de82f34', 1),
+(4, 'sarahsautet5@gmail.com', '2023-03-20', '2023-03-20 10:27:48', 'bcdeda095a6c882803fc3aaf4a17f08e', 1),
+(5, 'geoffreykimutai1154@gmail.com', '2023-03-20', '2023-03-20 10:28:09', '279ecfe9debbb091c664641f534857ee', 1),
+(6, 'samuelkamau785@mail.com', '2023-03-20', '2023-03-20 10:28:21', '94096ae01fc65e71c50c7843d096e041', 1);
 
 -- --------------------------------------------------------
 
@@ -1368,7 +1323,6 @@ CREATE TABLE `tbl_user` (
 INSERT INTO `tbl_user` (`id`, `full_name`, `email`, `phone`, `password`, `photo`, `role`, `status`) VALUES
 (1, 'Tobias  Mutuku', 'mutukutobias98@gmail.com', '0741877729', '73fe2be4399b617818a6e2a108e646ec', 'user-1.jpg', 'Super Admin', 'Active'),
 (2, 'Francis', 'nzukifrancis20@gmail.com', '0701723886', 'db78b06a48d4da96416bf28e548c8011', 'user-13.jpg', 'Super Admin', 'Active'),
-(3, 'Tobias', 'tobiasmutuku98@gmail.com', '0741877729', '266d05ff8ce286814687f595f824abc3', 'user-13.jpg', 'Super Admin', 'Active'),
 (4, 'Christine', 'eryouma003@gmail.com', '0795062462', 'fc660223e39bb68a599a6fa1af1c7099', 'user-13.jpg', 'Super Admin', 'Active');
 
 -- --------------------------------------------------------
@@ -1626,7 +1580,7 @@ ALTER TABLE `tbl_mid_category`
 -- AUTO_INCREMENT for table `tbl_order`
 --
 ALTER TABLE `tbl_order`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `tbl_page`
@@ -1638,7 +1592,7 @@ ALTER TABLE `tbl_page`
 -- AUTO_INCREMENT for table `tbl_payment`
 --
 ALTER TABLE `tbl_payment`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
 
 --
 -- AUTO_INCREMENT for table `tbl_photo`
@@ -1662,7 +1616,7 @@ ALTER TABLE `tbl_product`
 -- AUTO_INCREMENT for table `tbl_product_color`
 --
 ALTER TABLE `tbl_product_color`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=268;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=270;
 
 --
 -- AUTO_INCREMENT for table `tbl_product_photo`
@@ -1674,7 +1628,7 @@ ALTER TABLE `tbl_product_photo`
 -- AUTO_INCREMENT for table `tbl_product_size`
 --
 ALTER TABLE `tbl_product_size`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=448;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=452;
 
 --
 -- AUTO_INCREMENT for table `tbl_rating`
