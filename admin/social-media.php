@@ -12,7 +12,6 @@ if(isset($_POST['form1'])) {
 	$statement = $pdo->prepare("UPDATE tbl_social SET social_url=? WHERE social_name=?");
 	$statement->execute(array($_POST['instagram'],'Instagram'));
 
-
 	$statement = $pdo->prepare("UPDATE tbl_social SET social_url=? WHERE social_name=?");
 	$statement->execute(array($_POST['whatsapp'],'WhatsApp'));
 
@@ -42,7 +41,6 @@ foreach ($result as $row) {
 	if($row['social_name'] == 'Instagram') {
 		$instagram = $row['social_url'];
 	}
-	
 	
 	if($row['social_name'] == 'WhatsApp') {
 		$whatsapp = $row['social_url'];
@@ -100,7 +98,6 @@ foreach ($result as $row) {
 								<input type="text" class="form-control" name="whatsapp" value="<?php echo $whatsapp; ?>">
 							</div>
 						</div>
-						
 						</div>
 						<div class="form-group">
 							<label for="" class="col-sm-2 control-label"></label>
