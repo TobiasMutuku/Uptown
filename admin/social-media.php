@@ -10,9 +10,6 @@ if(isset($_POST['form1'])) {
 	$statement->execute(array($_POST['twitter'],'Twitter'));
 
 	$statement = $pdo->prepare("UPDATE tbl_social SET social_url=? WHERE social_name=?");
-	$statement->execute(array($_POST['instagram'],'Instagram'));
-
-	$statement = $pdo->prepare("UPDATE tbl_social SET social_url=? WHERE social_name=?");
 	$statement->execute(array($_POST['whatsapp'],'WhatsApp'));
 
 	$success_message = 'Social Media URLs are updated successfully.';
@@ -37,11 +34,6 @@ foreach ($result as $row) {
 	if($row['social_name'] == 'Twitter') {
 		$twitter = $row['social_url'];
 	}
-	
-	if($row['social_name'] == 'Instagram') {
-		$instagram = $row['social_url'];
-	}
-	
 	if($row['social_name'] == 'WhatsApp') {
 		$whatsapp = $row['social_url'];
 	}
@@ -83,12 +75,6 @@ foreach ($result as $row) {
 							<label for="" class="col-sm-2 control-label">Twitter </label>
 							<div class="col-sm-4">
 								<input type="text" class="form-control" name="twitter" value="<?php echo $twitter; ?>">
-							</div>
-						</div>
-						<div class="form-group">
-							<label for="" class="col-sm-2 control-label">Instagram </label>
-							<div class="col-sm-4">
-								<input type="text" class="form-control" name="instagram" value="<?php echo $instagram; ?>">
 							</div>
 						</div>
 						</div>
